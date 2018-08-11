@@ -5,6 +5,11 @@
 % Usage instructions:
 % Run this file from the PlatEMO root folder.
 %
+%
+% 2018.08.11 
+% Added coded for DTLZ Pareto set generation. DTLZ1, 2, 3, 4, and 7; 
+% 2D, 3D, 5D, and 10D support included. 
+
 
 clear;
 clc;
