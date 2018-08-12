@@ -1,3 +1,14 @@
+% This MATLAB script file generates results from scalable test instances, given a matrix of decision vectors.
+% It is being used to compare the results my test instances implementation to those in PlatEMO 
+% Ilamah, Osho. August 2018.
+% 
+%-----------------------------------------------------------------------------------------
+% Usage instructions:
+% Run this file from the PlatEMO root folder.
+
+% 2018.08.12 - Created. 
+
+
 clear;
 clc;
 
