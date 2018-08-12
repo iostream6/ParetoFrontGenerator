@@ -12,12 +12,12 @@
 clear;
 clc;
 
-K = 5;
+
 dimensions = [2; 3; 5; 10];
 paretoPoints = [100; 500; 1500; 5000];
+addpath("Public");
 
-
-%%{
+%{
 % ------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------
 %    Generate DTLZ Pareto fronts
@@ -25,7 +25,7 @@ paretoPoints = [100; 500; 1500; 5000];
 % ------------------------------------------------------------------------------------
 
 addpath("Problems/DTLZ");
-addpath("Public");
+K = 5;
 
 %% DTLZ1 pareto fronts
 filenames = {"DTLZ1.2D.pf"; "DTLZ1.3D.pf"; "DTLZ1.5D.pf"; "DTLZ1.XD.pf"};
@@ -89,7 +89,99 @@ end
 %    Generate CEC18 Pareto fronts
 % ------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------
+
 addpath("Problems/MaF");
+K = 10;
+
+%% MaF1 pareto fronts
+filenames = {"MaF1.2D.pf"; "MaF1.3D.pf"; "MaF1.5D.pf"; "MaF1.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF1('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
+
+%% MaF2 pareto fronts
+filenames = {"MaF2.2D.pf"; "MaF2.3D.pf"; "MaF2.5D.pf"; "MaF2.XD.pf"};
+% Add extra points due to peculiarities of MaF2
+paretoPoints = [300; 2200; 50000; 5000];
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF2('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+paretoPoints = [100; 500; 1500; 5000];
+
+
+%% MaF3 pareto fronts
+filenames = {"MaF3.2D.pf"; "MaF3.3D.pf"; "MaF3.5D.pf"; "MaF3.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF3('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
+
+%% MaF4 pareto fronts
+filenames = {"MaF4.2D.pf"; "MaF4.3D.pf"; "MaF4.5D.pf"; "MaF4.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF4('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
+
+%% MaF5 pareto fronts
+filenames = {"MaF5.2D.pf"; "MaF5.3D.pf"; "MaF5.5D.pf"; "MaF5.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF5('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
+
+%% MaF6 pareto fronts
+filenames = {"MaF6.2D.pf"; "MaF6.3D.pf"; "MaF6.5D.pf"; "MaF6.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF6('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
+
+%% MaF7 pareto fronts
+filenames = {"MaF7.2D.pf"; "MaF7.3D.pf"; "MaF7.5D.pf"; "MaF7.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF7('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
+
+%% MaF8 pareto fronts
+filenames = {"MaF8.2D.pf"; "MaF8.3D.pf"; "MaF8.5D.pf"; "MaF8.XD.pf"};
+
+for i=1:size(dimensions)
+  Global.M          = dimensions(i);
+  Global.D          = Global.M + K - 1; 
+  PF = MaF8('PF', Global, paretoPoints(i));
+  dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
+end
+
 %}
 
 %{
