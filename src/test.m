@@ -315,4 +315,54 @@ for i=1:size(X)
    [x, obj] =  MaF6('value', Global,X(i, :));
    F_x(i, :) = obj;
 end
+
+%################################################################################
+
+%MaF7 2D Test
+X = importdata('sol.txt');
+Global.M          = 2;
+Global.D          = Global.M + 9;
+
+F_x = zeros(size(X), Global.M);
+
+for i=1:size(X)
+   [x, obj] =  MaF7('value', Global,X(i, :));
+   F_x(i, :) = obj;
+end
+
+%MaF7 3D Test
+X = importdata('sol.txt');
+Global.M          = 3;
+Global.D          = Global.M + 9;
+
+F_x = zeros(size(X), Global.M);
+
+for i=1:size(X)
+   [x, obj] =  MaF7('value', Global,X(i, :));
+   F_x(i, :) = obj;
+end
+
+%MaF7 5D Test
+X = importdata('sol.txt');
+Global.M          = 5;
+Global.D          = Global.M + 9;
+
+F_x = zeros(size(X), Global.M);
+
+for i=1:size(X)
+   [x, obj] =  MaF7('value', Global,X(i, :));
+   F_x(i, :) = obj;
+end
+
+%MaF7 XD Test
+X = importdata('sol.txt');
+Global.M          = 10;
+Global.D          = Global.M + 9;
+
+F_x = zeros(size(X), Global.M);
+
+for i=1:size(X)
+   [x, obj] =  MaF7('value', Global,X(i, :));
+   F_x(i, :) = obj;
+end
 %}
