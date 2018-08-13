@@ -162,13 +162,16 @@ end
 
 %% MaF7 pareto fronts
 filenames = {"MaF7.2D.pf"; "MaF7.3D.pf"; "MaF7.5D.pf"; "MaF7.XD.pf"};
-
+K = 20;
+paretoPoints = [100; 450; 1200; 550];
 for i=1:size(dimensions)
   Global.M          = dimensions(i);
   Global.D          = Global.M + K - 1; 
   PF = MaF7('PF', Global, paretoPoints(i));
   dlmwrite(filenames{i},PF,'precision', '%.4f', 'delimiter',  ' ');
 end
+K = 10;
+paretoPoints = [100; 500; 1500; 5000];
 
 
 %% MaF8 pareto fronts
